@@ -1,8 +1,13 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(fill in your description and goals here)
-
+The project is starting. 
+[this is a link](www.google.com)
+![picture](xx.png "cheat") 
+$math expresion$
+``` SQL
+SELECT
+```
 ## Process
 ### (your step 1)
 ### (your step 2)
