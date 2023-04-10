@@ -59,5 +59,5 @@ WHERE TransactionID IS NULL and transactions=1
 
 ERD picture:
 
-![Alt text](ERD%20project%201.png)
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\ERDproject1.png](ERD%20project%201.png)
 

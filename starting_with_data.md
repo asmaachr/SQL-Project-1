@@ -13,7 +13,7 @@ Select round (cast(sum(revenue)as numeric),2) from analytics as analytics_total_
 
 # we know for data cleaning 141 products from sales_report don't exist therefore we can't link them anywhere to their price by unit#
 
-Without SME inputs, for the questions related to city/ and country I used the all_sessions table.
+Without SME inputs, for the questions related to city/ and country I used the all_sessions table to answer questions.
 
 ```
 
@@ -64,6 +64,8 @@ Answer:
 
 
 ![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer d2-2.png](Answer%20d2-2.png)
+
+There is definetly difference between both reports
 
 Question 3: What are the skus # for the product in trends Nest® Learning Thermostat 3rd Gen-USA
 
