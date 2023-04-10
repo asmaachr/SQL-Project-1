@@ -4,33 +4,35 @@
 
 In this project, my goals are as following:
 -Clean the data
--Transform the table to be more meanful for future -analysis without redudancy and Non useful information
+-Transform the table to be more meanful for future -analysis without redundancy and Non useful information
 -Understand the data without inputs from Subject Matter Experts(SME) through some preminalery analysis
 - Answer required answers
-- perform a QA 
+- develop some queries for the QA process and assess the risk
 - Personal goal: get familiar with SQL coding
-The project is starting. 
-[this is a link](www.google.com)
-![picture](xx.png "cheat") 
-$math expresion$
-``` SQL
-SELECT
-```
+
 ## Process
-### Create the table and identify data type
-### Cleaning the data
-### Explore data run queries for comparison
-### Identify the problem that I am trying to solve ( questions)
-### Identify additional information from dat
+-Create the table and identify data type
+-Cleaning the data identify primary and foreign key when possible
+-Explore data run queries for comparison
+-Identify the problem that I am trying to solve ( questions)
+-Identify additional insights fromm data
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+
+ 1-US/ San Francisco has the highest value if ignore the unknown cities
+2- It seems that everywhere the average product ordered by visitor is equal to one
+3- It seems to point-out to product category Home/Nest/Nest care in US mainly
+4- It seems that the product that is top for many cities is Nest@ Learning Thermostat 3rd gen
+5- Please refer to table summarized by percentage by city/country
+
+Further results:
+Some Skus with these product name are out of stock
 
 ## Challenges 
-It was really chanlenging to understand and clean the table without SME inputs
-Many colunm have similar names but not with same values
-Time was very limitted so I had to proceed with some assumptions
-Difficulty to reconciale revenue numbers
+-It was really chanlenging to understand and clean the table without SME inputs
+-Many colunm have similar names but not withsame values
+-Time was very limitted so I had to proceed with some assumptions
+Difficulty to reconcilate revenue numbers
 
 ## Future Goals
 Ask SME about the meaning of some colunms

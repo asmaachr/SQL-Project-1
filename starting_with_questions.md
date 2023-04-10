@@ -29,35 +29,21 @@ Limit 10
 ```
 
 Answer:
-
+For both, US/ San Francisco has the highest value if ignore the unknown cities
 1-Highest revenue
-"United States"	"not available in demo dataset"	6092.56
-"United States"	"San Francisco"	1564.32
-"United States"	"Sunnyvale"	992.23
-"United States"	"Atlanta"	854.44
-"United States"	"Palo Alto"	608.00
-"Israel"	"Tel Aviv-Yafo"	602.00
-"United States"	"New York"	530.36
-"United States"	"Mountain View"	483.36
-"United States"	"Los Angeles"	479.48
-"United States"	"Chicago"	449.52
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\Answer 1-1.png]
+
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 1-1.png](Answer%201-1.png)
+
+
+
 
  2- Hignest amount of transactions with revenue
-```
-![C:\Users\asmaa\OneDrive\Pictures\Answer1-2.png]
-```
-"United States"	"not available in demo dataset"	25
-"United States"	"San Francisco"	12
-"United States"	"Mountain View"	8
-"United States"	"New York"	8
-"United States"	"Sunnyvale"	4
-"United States"	"Chicago"	3
-"United States"	"Palo Alto"	3
-"United States"	"Austin"	2
-"United States"	"Atlanta"	2
-"United States"	"Los Angeles"	2
-````
+
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer1-2.png](Answer1-2.png)
+
+
+
+
 **Question 2: What is the average number of products ordered from visitors in each city and country?**
 
 For this question I will consider consider the number of products as number of sku#
@@ -76,21 +62,17 @@ order by count(productsku)/count (distinct fullvisitorid)desc
 ```
 Answer:
 
-It seems that everywhere the average product by vistor is equal to one
-"C:\Users\asmaa\OneDrive\Pictures\Answer 2.png"
-"Australia"	"Sydney"	1	1	1
-"Canada"	"New York"	1	1	1
-"Canada"	"Toronto"	1	1	1
-"Israel"	"Tel Aviv-Yafo"	1	1	1
-"Switzerland"	"Zurich"	1	1	1
+It seems that everywhere the average product ordered by visitor is equal to one
 
-
-
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 2.png](Answer%202.png)
 
 
 
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
-By country by city
+
+ It seems to point-out to product category Home/Nest/Nest care in US mainly
+
+### By country by city
 ```
 SQL Queries:
 Select country,
@@ -102,7 +84,7 @@ where transactions = 1
 group by country,city, v2productcategory
 order by country,count(v2productcategory)desc, city
 ```
-By country
+### By country
 ```
 Select country,
 v2productcategory,
@@ -115,87 +97,77 @@ order by country, count(v2productcategory) desc
 
 
 
-
-
-
-
-
-
 Answer:
-By country and city
-"C:\Users\asmaa\OneDrive\Pictures\Answer 3-1.png"
 
-"Australia"	"Sydney"	"Nest-USA"	1
-"Canada"	"New York"	"Home/Apparel/Men's/Men's-Outerwear/"	1
-"Canada"	"Toronto"	"Apparel"	1
-"Israel"	"Tel Aviv-Yafo"	"Home/Nest/Nest-USA/"	1
-"Switzerland"	"Zurich"	"Home/Apparel/Men's/Men's-T-Shirts/"	1
-"United States"	"not available in demo dataset"	"Home/Nest/Nest-USA/"	6
-"United States"	"San Francisco"	"Home/Nest/Nest-USA/"	3
-"United States"	"Mountain View"	"Apparel"	2
-"United States"	"not available in demo dataset"	"Electronics"	2
-"United States"	"not available in demo dataset"	"Home/Apparel/Men's/Men's-T-Shirts/"	2
-"United States"	"not available in demo dataset"	"Home/Apparel/Women's/Women's-T-Shirts/"	2
-"United States"	"not available in demo dataset"	"Nest-USA"	2
-"United States"	"Palo Alto"	"Home/Nest/Nest-USA/"	2
-"United States"	"Atlanta"	"Home/Apparel/Men's/Men's-T-Shirts/"	1
-"United States"	"Atlanta"	"Bags"	1
-"United States"	"Austin"	"Home/Shop by Brand/Google/"	1
-"United States"	"Austin"	"Apparel"	1
-"United States"	"Chicago"	"Lifestyle"	1
-"United States"	"Chicago"	"Home/Office/Writing Instruments/"	1
-"United States"	"Chicago"	"Nest-USA"	1
-"United States"	"Columbus"	"(not set)"	1
-"United States"	"Houston"	"Home/Drinkware/"	1
-"United States"	"Los Angeles"	"Home/Nest/Nest-USA/"	1
-"United States"	"Los Angeles"	"Home/Apparel/Women's/"	1
-"United States"	"Mountain View"	"Home/Apparel/Kid's/Kid's-Infant/"	1
-"United States"	"Mountain View"	"Nest-USA"	1
-"United States"	"Mountain View"	"Home/Nest/Nest-USA/"	1
-"United States"	"Mountain View"	"Home/Electronics/Electronics Accessories/"	1
-"United States"	"Mountain View"	"Home/Apparel/Women's/Women's-Outerwear/"	1
-"United States"	"Mountain View"	"Waze"	1
-"United States"	"Nashville"	"Nest-USA"	1
-"United States"	"New York"	"Home/Shop by Brand/"	1
-"United States"	"New York"	"Home/Accessories/Fun/"	1
-"United States"	"New York"	"Apparel"	1
-"United States"	"New York"	"${escCatTitle}"	1
-"United States"	"New York"	"Home/Apparel/Kid's/Kid's-Infant/"	1
-"United States"	"New York"	"Home/Apparel/Men's/Men's-Performance Wear/"	1
-"United States"	"New York"	"Home/Nest/Nest-USA/"	1
-"United States"	"New York"	"Home/Apparel/Men's/Men's-T-Shirts/"	1
-"United States"	"not available in demo dataset"	"Waze"	1
-"United States"	"not available in demo dataset"	"Apparel"	1
-"United States"	"not available in demo dataset"	"Bags"	1
-"United States"	"not available in demo dataset"	"Home/Accessories/Pet/"	1
-"United States"	"not available in demo dataset"	"Home/Apparel/"	1
-"United States"	"not available in demo dataset"	"Home/Apparel/Kid's/Kid's-Infant/"	1
-"United States"	"not available in demo dataset"	"Home/Bags/"	1
-"United States"	"not available in demo dataset"	"Home/Drinkware/"	1
-"United States"	"not available in demo dataset"	"Home/Office/Notebooks & Journals/"	1
-"United States"	"not available in demo dataset"	"Home/Shop by Brand/Google/"	1
-"United States"	"not available in demo dataset"	"Lifestyle"	1
-"United States"	"Palo Alto"	"Nest-USA"	1
-"United States"	"San Bruno"	"Home/Apparel/Men's/"	1
-"United States"	"San Francisco"	"Home/Accessories/Drinkware/"	1
-"United States"	"San Francisco"	"Home/Accessories/Fun/"	1
+By country and city
+
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 3-1.png](Answer%203-1.png)
+
+
 
 By country
-"C:\Users\asmaa\OneDrive\Pictures\Answer3-2.png"
+Home
 
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer3-2.png](Answer3-2.png)
 
+It is seems to point out to Home/Nest/Nest care
 
 **Question 4: What is the top-selling product from each city/country? Can we find any pattern worthy of noting in the products sold?**
-Since we don't have the quantity sold in all-sessions. we join the tan
+
+Since the average product by visitor is one. I will use this as an assumption for the following:
+
+For this query , I retrieve the Units_sold form analytics 
+by fullvisitorid and visitid when revenue is not zero, joined the resulted table with all_sessions using both ids as the connectors with the condition transactions =1. 
+Then I ranked product according to unit_sold by country and city. 
+
+
 
 SQL Queries:
+```
+With total_sales_by_sku as (Select 
+country,
+city,
+productsku,
+v2productname,							
+sum(temp.qtysold) as totalqty
+from all_sessions a
+join (
+Select 
+    fullvisitorid, 
+    visitid, 
+    SUM(units_sold) as qtysold
+From 
+    analytics
+Where 
+    revenue != 0
+GROUP BY 
+    fullvisitorid, visitid) temp
+On  a.fullvisitorid = temp.fullvisitorid and a.visitid = temp.visitid
+where transactions = 1
+group by country, city, productsku,v2productname
+order by country, city, productsku, sum(temp.qtysold) desc)
+
+Select 
+   country,
+   city,
+   productsku,
+   v2productname,
+   totalqty,
+   RANK() OVER(PARTITION BY country, city ORDER BY totalqty DESC) AS rank
+From 
+   total_sales_by_sku
+
+Order By 
+   country, city
+```
 
 
 
 Answer:
+This is just a snapshot
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 4-1.png](Answer%204-1.png)
 
-
-
+It seems that the product in trends  is Nest® Learning Thermostat 3rd Gen-USA
 
 
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
@@ -211,11 +183,13 @@ where transactions=1
 Group By country,city
 Order By round(cast(sum(totaltransactionrevenue) as numeric),2) desc
 ```
+Answer
 
-Answer:
+![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 5.png](Answer%205.png)Answer:
 
-!["C:\Users\asmaa\OneDrive\Pictures\Answer 5.png"]
 
+
+It seems that the product most sold is: Nest® Learning Thermostat 3rd Gen-USA
 
 
 
