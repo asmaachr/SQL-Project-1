@@ -19,9 +19,9 @@ In this project, my goals are as following:
 - identify risks and QA process
 
 ## Results
-Data is not structure. Many values are missing. No decision based on this data is reliable.
-Many discrepancies revenues between tables and skus quantities between tables.
-SME inpust are required and review data process mapping and validation is a must.
+- Data is not structure. Many values are missing. No decision based on this data is reliable.
+- Many discrepancies revenues between tables and skus quantities between tables.
+- SME inpust are required and reviewing data collection, mapping and validation processes are a must.
 With some assumptions, questions results are:
 1-US/ San Francisco has the highest value if ignore the unknown cities
 2- It seems that everywhere the average product ordered by visitor is equal to one
