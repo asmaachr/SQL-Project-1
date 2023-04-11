@@ -3,10 +3,10 @@ What issues will you address by cleaning the data?
 ## Creating back
 During this project I've done table by table. in the future I will prefer to do it by database.
 ## General cleaning points
--change data type  ex timestamps, price in $..
--Remove redudant colunms from one table to another
--Remove empty column or with similar value for all rows
--Remove duplicated data when it is obvious   
+- change data type  ex timestamps, price in $..
+- Remove redudant colunms from one table to another
+- Remove empty column or with similar value for all rows
+- Remove duplicated data when it is obvious   
 ## tables decision summary
 - Sales_by_sku to be removed from data base
 - Sales_report to be removed stocklevel, restockingleadtime
