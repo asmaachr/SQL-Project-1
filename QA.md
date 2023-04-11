@@ -26,7 +26,7 @@ Select sku, sum(1) As count
 from products
 Group By 1
 Having sum(1)>1
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\QA -1.png](QA%20-1.png)
+![QA1.png](QA1.png)
 No duplicate
 
 QA2
@@ -35,7 +35,7 @@ from sales_report
 Group By 1
 Having sum(1)>1
 No duplicate
-
+![QA2.png](QA2.png)
 QA3
 Select fullvisitorid, sum(1) As count
 from all_sessions
@@ -43,7 +43,8 @@ where transactions =1
 Group By 1
 Having sum(1)>1
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\QA-3.png](QA-3.png)
+![QA3.png](QA3.png)
+
 
 It shows that we have one case with same fullvisitorID and visitID
 therefore our assumption for question 4 is not true. We need to understand better the tables and transform them so we can have one key by table
@@ -54,10 +55,12 @@ SELECT TransactionID, “missing_TransactionID” AS reason
 FROM all_sessions
 WHERE TransactionID IS NULL and transactions=1
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\QA4-1.png](QA4-1.png)
+![QA4.png](QA4.png)
+
 
 
 ERD picture:
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\ERDproject1.png](ERD%20project%201.png)
+![ERDproject1.png](ERDproject1.png)
+
 

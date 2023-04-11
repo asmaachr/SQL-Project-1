@@ -1,42 +1,43 @@
 What issues will you address by cleaning the data?
 # Summary
-## creating back
- During this project I've done table by table. in the future I will prefer to do it by database.
-## general cleaning points
-    -change data type  ex timestamps, price in $..
-    -Remove redudant colunms from one table to another
-    -Remove empty column or with similar value for all rows
-    -Remove duplicated data when it is obvious
+## Creating back
+During this project I've done table by table. in the future I will prefer to do it by database.
+## General cleaning points
+-change data type  ex timestamps, price in $..
+-Remove redudant colunms from one table to another
+-Remove empty column or with similar value for all rows
+-Remove duplicated data when it is obvious   
 ## tables decision summary
-    - Sales_by_sku to be removed from data base
-    - Sales_report to be removed stocklevel, restockingleadtime
-    Key:Productsku (foreign to products)
-    - Products: to be removed sentimentscore, sentimentmagnitude
-    Primary Key: Sku
+- Sales_by_sku to be removed from data base
+- Sales_report to be removed stocklevel, restockingleadtime
+Key:Productsku (foreign to products)
+- Products: to be removed sentimentscore, sentimentmagnitude
+Primary Key: Sku
+
 ```
 ALTER TABLE products ADD PRIMARY KEY (sku);
 
 ALTER TABLE sales_report
     ADD CONSTRAINT fk_productsku FOREIGN KEY (productsku) REFERENCES products (sku);
 ```
-    -  Analytics:removed userid, Social engagement level
-    I believe this table is missing a product field
-    No identified primary key- should be grouped by fullvisitorid and visitid to be used for quantitave fields
-    - All_sessions: removed currency,searchKeyword, itemrevenue, itemprice, productrefund amount
-    Primary key: Create Session id with status (identify visitor actions on website) or breakdown table to two 
-        transactions with revenues
-        Visitor actions in the web
-    May be remove rows with "total revenue in all_sessions" after SME inputs
+-  Analytics:removed userid, Social engagement level
+I believe this table is missing a product field
+No identified primary key- should be grouped by fullvisitorid and visitid to be used for quantitave fields
+- All_sessions: removed currency,searchKeyword, itemrevenue, itemprice, productrefund amount
+Primary key: Create Session id with status (identify visitor actions on website) or breakdown table to two 
+a-transactions with revenues
+b-Visitor actions in the web
+May be remove rows with "total revenue in all_sessions" after SME inputs
 - Important points:
-    - Total revenue in all_sessions much lower total revenue in analytics
-    - Total skus in all Sessions lower by 141 by comparison with Sales_report
-    - 8 sku # in sales_by-sku but no whereelse considered discarded
+Total revenue in all_sessions much lower total revenue in analytics
+Total skus in all Sessions lower by 141 by comparison with Sales_report
+8 sku # in sales_by-sku but no whereelse considered discarded
 
 # Queries:
 
 ##  Sales_report:
 
-### creating a back-up to the table sales_report
+### Creating a back-up to the table sales_report
 ```
 CREATE TABLE sales_report_copy AS
 SELECT * FROM sales_report WHERE 1=0;
@@ -48,21 +49,21 @@ SELECT * FROM sales_report_copy
 ```
 
 
-### change the ratio format to percentage 
+### Change the ratio format to percentage 
 Calculation formula not clear so I couldn't fill blank values
 ```
 UPDATE sales_report
 SET ratio = round(CAST(ratio AS Numeric)*100,2);
 ```
 
-### removing leading and trailing space for significant varchar data ex product sku and name
+### Removing leading and trailing space for significant varchar data ex product sku and name
 ```
 UPDATE sales_report
 SET productsku = TRIM(both ' ' FROM productsku),
     name = TRIM(both ' ' FROM name);
 ```
 
-### looking for empty column
+### Looking for empty column
 ```
 Select * from sales_report
 where productsku is null
@@ -78,7 +79,7 @@ or ratio is null
 There are 78 records with null as value for Ratio column. Since I am not able to guess the calculation formula, I need input from SME to update this column.
 
 
-### looking for duplicate productsku and name 
+### Looking for duplicate productsku and name 
 ```
 Select productsku, count(*) from sales_report
 group  by productsku
@@ -92,11 +93,11 @@ group  by productsku
 Having count(name)>1
 ```
 
-=> there are duplication however name the product name is not unique to a sku (no brand, general name ex blue t-shirt)
+=> there are duplication however the product name is not unique to a sku (no brand, general name ex blue t-shirt)
 
 ## Sales_by_sku
 
-### creating a back-up to the table sales_report
+### Creating a back-up to the table sales_report
 ```
 CREATE TABLE sales_by_sku_copy AS
 SELECT * FROM sales_by_sku WHERE 1=0;
@@ -107,12 +108,12 @@ SELECT * FROM sales_by_sku;
 SELECT * FROM sales_by_sku_copy;
 ```
 
-### removing leading and trailing space
+### Removing leading and trailing space
 ```
 UPDATE sales_by_sku
 SET productsku = TRIM(both ' ' FROM productsku)*/
 ```
-### looking for duplication
+### Looking for duplication
 
 ```
 select productsku, count(*)
@@ -124,7 +125,7 @@ having count(*)>1
 
 
 
-## comparison sales_by_sku and sales_report
+## Comparison sales_by_sku and sales_report
 ```
 select count(*)
 from sales_by_sku
@@ -160,7 +161,7 @@ Sku         qty ordered
 
 ## Products Table
 
-### creating a back-up to the table sales_report
+### Creating a back-up to the table sales_report
 ```
 CREATE TABLE products_copy AS
 SELECT * FROM products WHERE 1=0;
@@ -171,7 +172,7 @@ SELECT * FROM products;
 SELECT * FROM products_copy
 ```
 
-### cleaning the empty space in varchar# -->
+### Cleaning the empty space in varchar# -->
 ```
 UPDATE products
 SET sku = TRIM(both ' ' FROM sku),
@@ -181,7 +182,7 @@ name = TRIM(both ' ' FROM name)
 The table seems to track the inventory by product.
 It has 1092 records.
 
-### looking for blank columns and duplicate rows
+### Looking for blank columns and duplicate rows
 
 ```
 SELECT sku, count(*) FROM products
@@ -191,7 +192,7 @@ Having count(*)>1
 
  We will skip name duplication because similarly the product name is not unique to a sku
 
-### compare the value of the column to products to the similar column in sales_report and sales_sku -->
+### cComparing  the value of the column to products to the similar column in sales_report and sales_sku -->
 a- product sku
 
 ```
@@ -207,7 +208,7 @@ on p.sku = sbs.productsku
 ```
 Results 1100 records#
 
-#### identifing the sku that are in sale_by_sku but not in produtcs#
+#### Identifing the sku that are in sale_by_sku but not in produtcs#
 ```
 select *
 from products p
@@ -230,7 +231,7 @@ Therefore we will ignore this items since they don't exist in any other table. w
 
 Following this decision the sku_by_sale table is redudant: to be removed
 
-####  redudant colunms
+####  Redudant colunms
 ```
 select p.sentimentmagnitude, sr.sentimentmagnitude
 from products p
@@ -259,7 +260,7 @@ ratio (could be removed but waiting for SME input)
 
 Similar exercise as above except the following:
 
-### empty columns
+### Empty columns
 ```
 SELECT count(*) From analytics
 where userid is not  null
@@ -308,7 +309,7 @@ This table has many colunms like the previous one but because revenue don't matc
 report, I decided to leave it as is except removing empty columns.
 
 
-### empty column
+### empty columns
 ```
 Select count(*) from all_sessions
 ```
