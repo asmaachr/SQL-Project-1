@@ -1,6 +1,6 @@
 What are your risk areas? Identify and describe them.
 
-There sre many risks:
+There are many risks:
 - All sessions table doesn't have the realized revenue but potential revenue 
 example refund revenue, in cart revenue...
 - City with Unkonw names are not real related to a system demo
