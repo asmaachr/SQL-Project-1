@@ -60,10 +60,14 @@ order by sum(temp.qtysold) desc
 limit 10
 ```
 Answer:
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer d2-1.png](Answer%20d2-1.png)
+Sales_report
 
+![Answerd21.png](Answerd21.png)
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer d2-2.png](Answer%20d2-2.png)
+All_sessions
+
+![Answer2.png](Answer2.png)
+
 
 There is definetly difference between both reports
 
@@ -81,7 +85,8 @@ On productsku = sku
 
 
 Answer:
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer d3.png](Answer%20d3.png)
+![Answerd3.png](Answerd3.png)
+
 Some products are out of stock, further investigation required
 
 Question 4: what is the quality measures for this product?
@@ -98,12 +103,8 @@ On temp.productsku = sr.productsku
 ```
 Answer:
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer d4.png](Answer%20d4.png)
+![Answerd4.png](Answerd4.png)
 
 
 
-Question 5: How is the social engagement related to this product?
 
-SQL Queries:
-
-Answer:

@@ -31,15 +31,16 @@ Limit 10
 Answer:
 For both, US/ San Francisco has the highest value if ignore the unknown cities
 1-Highest revenue
+![Answer11.png](Answer11.png)
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 1-1.png](Answer%201-1.png)
 
 
 
 
  2- Hignest amount of transactions with revenue
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer1-2.png](Answer1-2.png)
+![Answer12.png](Answer12.png)
+
 
 
 
@@ -64,7 +65,10 @@ Answer:
 
 It seems that everywhere the average product ordered by visitor is equal to one
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 2.png](Answer%202.png)
+![Answer22.png](Answer22.png)
+
+
+
 
 
 
@@ -100,15 +104,15 @@ order by country, count(v2productcategory) desc
 Answer:
 
 By country and city
+![Answer31.png](Answer31.png)
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 3-1.png](Answer%203-1.png)
 
 
 
 By country
 Home
+![Answer32.png](Answer32.png)
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer3-2.png](Answer3-2.png)
 
 It is seems to point out to Home/Nest/Nest care
 
@@ -165,7 +169,9 @@ Order By
 
 Answer:
 This is just a snapshot
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 4-1.png](Answer%204-1.png)
+
+![Answer41.png](Answer41.png)
+
 
 It seems that the product in trends  is Nest® Learning Thermostat 3rd Gen-USA
 
@@ -185,7 +191,8 @@ Order By round(cast(sum(totaltransactionrevenue) as numeric),2) desc
 ```
 Answer
 
-![C:\Users\asmaa\OneDrive\Desktop\LHL\Projects\Project1\SQL-Project-1\Answer 5.png](Answer%205.png)Answer:
+![Answer5.png](Answer5.png)
+
 
 
 
