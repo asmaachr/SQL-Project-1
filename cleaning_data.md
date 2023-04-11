@@ -192,7 +192,7 @@ Having count(*)>1
 
  We will skip name duplication because similarly the product name is not unique to a sku
 
-### cComparing  the value of the column to products to the similar column in sales_report and sales_sku -->
+### Comparing  the value of the column to products to the similar column in sales_report and sales_sku -->
 a- product sku
 
 ```
