@@ -1,4 +1,5 @@
 What are your risk areas? Identify and describe them.
+
 There sre many risks:
 1- All sessions table doesn't have the realized revenue but potential revenue 
 example refund revenue, in cart revenue...
