@@ -33,17 +33,18 @@ Further results from additional questions
 Some Skus with these product name are out of stock
 
 ## Challenges 
--It was really chanlenging to understand and clean the table without SME inputs
--Many colunms have similar names but not with same values
--Time was very limitted so I had to proceed with some assumptions
--Difficulty to reconcilate revenue numbers
+- It was really chanlenging to understand and clean the table without SME inputs
+- Many colunms have similar names but not with same values
+- Time was very limitted so I had to proceed with some assumptions
+- Difficulty to reconcilate revenue numbers
+- -Pg Admin crashing
 
 ## Future Goals
-Ask SME about the meaning of some colunms
-clean better my data
-Remove colunm with not input for the problem
-Updated by Mds file as I do my work
-Find out more insights from the data
-Link the tables in Pg admin
-Restructure the tabke to be more meaningful from business stand point ex transactions table, inventory,
+- Ask SME about the meaning of some colunms
+- clean better my data
+- Remove colunm with not input for the problem
+- Updated by Mds file as I do my work
+- Find out more insights from the data
+- Link the tables in Pg admin
+- Restructure the tabke to be more meaningful from business stand point ex transactions table, inventory,
 visit volume, actions on sites, sales
