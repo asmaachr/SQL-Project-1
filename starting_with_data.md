@@ -8,7 +8,7 @@ SQL Queries:
 Select round(cast(sum(totaltransactionrevenue)as numeric),2) as all_sessions_total_revenue from all_sessions; 
 #$14281.31#
 
-Select round (cast(sum(revenue)as numeric),2) from analytics as analytics_total_revenue from;
+Select round (cast(sum(revenue)as numeric),2) from analytics as analytics_total_revenue;
 #Answer $1167079.98#
 
 # we know for data cleaning 141 products from sales_report don't exist therefore we can't link them anywhere to their price by unit#
