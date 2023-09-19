@@ -130,7 +130,7 @@ having count(*)>1
 select count(*)
 from sales_by_sku
 ```
-results 462 rowsa
+results 462 rows
 ```
 select count(*)
 from sales_report
@@ -143,7 +143,7 @@ Select sbs.productsku, sbs.total_ordered,sr.total_ordered
 from sales_by_sku sbs
 full join sales_report sr
 on sbs.productsku = sr.productsku
-where sr.total_ordered != sr.total_ordered or sr.total_ordered is null
+where sbs.total_ordered != sr.total_ordered or sr.total_ordered is null
 ```
 The results show that:
 - the query without condition returned 462 rows therefore we have 462 items confirm #rows in sku_by_sale
@@ -208,7 +208,7 @@ on p.sku = sbs.productsku
 ```
 Results 1100 records#
 
-#### Identifing the sku that are in sale_by_sku but not in produtcs#
+#### Identifing the sku that are in sale_by_sku but not in products#
 ```
 select *
 from products p
@@ -226,8 +226,8 @@ where p.sku is null
 "GGOEGALJ057912"	2
  
  Same 8 pordict sku # as the sales_report. 
-A quick check in all_sessions ans analytics for the products quantities reveals records.
-Therefore we will ignore this items since they don't exist in any other table. we will make the assumption that these products were terminated.
+A quick check in all_sessions and analytics for the products quantities reveals no records.
+Therefore we will ignore these items since they don't exist in any other table. we will make the assumption that these products were terminated.
 
 Following this decision the sku_by_sale table is redudant: to be removed
 
